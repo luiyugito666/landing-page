@@ -88,10 +88,51 @@ p {
 }
 /* **** component code*** */
 
+/*inicio componente*/
 /* **** Menu*** */
-.menu {
-  display: none;
+.menu-btn {
+  /*para el mobile*/
+  background-color: var(--second-color);
+  border: 0;
+  outline: thin solid var(--first-color);
+  cursor: pointer;
 }
+.menu-btn svg {
+  fill: var(--first-color); /*para dar un relleno para las svg*/
+}
+.menu {
+  position: fixed; /*nota:pierde sus propiedades de alto y ancho al usar fixed*/
+  left: 0;
+  bottom: var(--header-heigth);
+  width: 100%;
+  display: flex; /*para acomodar los componentes del menu*/
+  flex-direction: column;
+  opacity: 0; /*ocultaremos a menu para luego habilitarlo con una funcion de js*/
+  transition: opacity 0.5s ease;
+  pointer-events: none; /*para que no reacciones a interactividad*/
+  background-color: var(--second-color);
+}
+
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu a {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--first-color);
+}
+
+.menu a:hover {
+  background-color: var(--first-color);
+  color: var(--white-color);
+}
+
+/*fin componente*/
 
 /* **** Utilities *** */
 .box-shadow-1 {
@@ -105,7 +146,7 @@ p {
 }
 
 .none {
-  display: none !important;
+  display: none;
 }
 /* **** Site Styles*** */
 .header {
