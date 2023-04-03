@@ -1,0 +1,132 @@
+/** DRY - DONT REPEAT YOURSELF*/
+/* **** Custom Properties *** */
+/*variables qeu tendremos basandolos en el stylo del proyecto brindado en figma*/
+:root {
+  --first-color: #d90062;
+  --first-alpha-color: rgb(210, 0, 98, 0.75);
+  --second-color: #14192d;
+  --second-alpha-color: rgba(20, 25, 45, 0.75);
+  --third-color: #501464;
+  --third-alpha-color: rgba(80, 20, 100, 0.75);
+  --white-color: #ffffff;
+  --gray-light-color: ##f3f3f3;
+  --gray-color: #cccccc;
+  --gray-dark-color: #666666;
+  --black-color: #000000;
+  --link-color: #509ee3;
+  --title-color: #333333;
+  --text-color: #222222;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --font: "Raleway", "san-serif";
+  --max-width: 1200px;
+  --header-heigth: 4rem;
+}
+/* **** Reset(se hará un reseteo general al documento al modelo de caja) *** */
+
+html {
+  box-sizing: border-box; /*reseteo del modelo de caja - ancho y altura va desde el borde y no del contenido(asi se evita la no correspondencia de los paddings y border)*/
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth; /*para dar efecto de transisciones*/
+}
+/*con el selector universal para que sus contenidos dinamicos con after y before, todos los elementos hereden el tamaño de caja del nodo principal html*/
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+/*para los h, se convierte el tamaño de fuentes que esta en px a rem(1 rem=16px*h1- ademas dejamos con borde 0*/
+
+body {
+  margin: 0;
+  overflow-x: hidden; /*(para evitar la barra de desplazamiento)*/
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+}
+a :hover {
+  opacity: 0.75;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6; /*para interlineado entre cada parrafo*/
+}
+/* **** component code*** */
+
+/* **** Menu*** */
+.menu {
+  display: none;
+}
+
+/* **** Utilities *** */
+.box-shadow-1 {
+  box-shadow: 0.25rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+}
+
+.none {
+  display: none !important;
+}
+/* **** Site Styles*** */
+.header {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  padding: 1rem;
+  width: 100%;
+  height: var(--header-heigth);
+  background-color: var(--second-color);
+}
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: var(--first-color);
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+}
