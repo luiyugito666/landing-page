@@ -88,7 +88,29 @@ p {
 }
 /* **** component code*** */
 
-/*inicio componente*/
+/**inicio componente**/
+/* **** hero image *** */
+.hero-image {
+  background-image: var(--hero-image);
+  background-repeat: no-repeat;
+  background-size: cover; /*se adapta a la manera proporcial del contenedor*/
+  background-position: center;
+  background-attachment: var(--hero-attachment); /*para que no haga scroll*/
+}
+.hero-image-opacity {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--hero-opacity-color);
+}
+
+.hero-image-title {
+  font-size: 7.5vw; /*significa qeu toma el 7.5 de manera proporcional del tamaño de la pantalla*/
+  color: var(--hero-text-color);
+}
 /* **** Menu*** */
 .menu-btn {
   /*para el mobile*/
@@ -132,9 +154,47 @@ p {
   color: var(--white-color);
 }
 
+/*para desktop*/
+@media screen and (min-width: 1024px) {
+  /*se iran quitando algunas propiedases que tenian como mobile para adptar a desktop*/
+  .menu-btn {
+    display: none; /*para desktop no necesitamos en este boton*/
+  }
+  .menu {
+    position: static; /*se le debe regresar al valor natural*/
+    opacity: 1;
+    pointer-events: auto;
+    width: auto;
+    flex-direction: row;
+  }
+  .menu a {
+    padding: 0 1rem;
+  }
+  .menu a:last-child {
+    /*a la ultima de la lista del menu  se le quita el pading*/
+    padding: 0;
+  }
+
+  .menu a:hover {
+    background-color: transparent;
+  }
+}
+
+/*fin menu*/
 /*fin componente*/
 
 /* **** Utilities *** */
+.btn {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
 .box-shadow-1 {
   box-shadow: 0.25rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
 }
@@ -148,7 +208,9 @@ p {
 .none {
   display: none;
 }
+
 /* **** Site Styles*** */
+/* version mobile */
 .header {
   position: fixed;
   left: 0;
@@ -170,4 +232,17 @@ p {
   font-weight: bold;
   font-size: 2rem;
   text-decoration: none;
+}
+/* trabajaremos en media query */
+/* para trabajar el menu en tablet */
+@media screen and (min-width: 768px) {
+}
+/* //para cabezara en version desktop */
+@media screen and (min-width: 1024px) {
+  .header {
+    position: sticky; /* se comporta como elemento fijo, para que no tape el siguiente contenido anterior html */
+    top: 0;
+    padding: 0.5rem;
+    height: calc(var(--header-heigth)- 0.5rem);
+  }
 }
