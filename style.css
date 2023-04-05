@@ -9,7 +9,7 @@
   --third-color: #501464;
   --third-alpha-color: rgba(80, 20, 100, 0.75);
   --white-color: #ffffff;
-  --gray-light-color: ##f3f3f3;
+  --gray-light-color: #f3f3f3;
   --gray-color: #cccccc;
   --gray-dark-color: #666666;
   --black-color: #000000;
@@ -210,6 +210,10 @@ progress::-moz-progress-bar {
 /******fin componente********/
 
 /* **** Utilities *** */
+.bg-gray-light {
+  background-color: var(--gray-light-color);
+}
+
 .btn {
   border-radius: 0.5rem;
   padding: 1rem;
@@ -239,6 +243,16 @@ progress::-moz-progress-bar {
 }
 .section {
   padding: 2rem 1rem;
+}
+
+.section-title {
+  border-top: thin solid var(--first-color);
+  border-bottom: thin solid var(--first-color);
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  width: 250px;
+  text-align: center;
+  color: var(--title-color);
 }
 .text-center {
   text-align: center;
@@ -294,9 +308,35 @@ progress::-moz-progress-bar {
   font-size: 2rem;
   text-decoration: none;
 }
+
+.service-card {
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.service-card svg {
+  fill: var(--first-color);
+  margin-bottom: 1.25rem;
+}
+
+.service-card h3 {
+  color: var(--title-color);
+}
+
 /* trabajaremos en media query */
 /* para trabajar el menu en tablet */
 @media screen and (min-width: 768px) {
+  .services > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .services .section-title {
+    grid-column: span 2; /*para que ocupe en 2 columnas*/
+  }
 }
 /* //para cabezara en version desktop */
 @media screen and (min-width: 1024px) {
@@ -311,5 +351,13 @@ progress::-moz-progress-bar {
     top: 0;
     padding: 0.5rem;
     height: calc(var(--header-heigth)- 0.5rem);
+  }
+
+  .services > .container {
+    grid-template-columns: repeat(3, 30%);
+  }
+
+  .services .section-title {
+    grid-column: span 3; /*para que ocupe en 2 columnas*/
   }
 }
