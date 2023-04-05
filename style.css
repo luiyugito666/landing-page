@@ -182,6 +182,43 @@ p {
 
 /*fin menu*/
 
+/***** modal****/
+.modal {
+  position: fixed;
+  /*posicionar de manera fija*/
+  z-index: 999; /*para que este sobre cualquier contenido */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-alpha-color);
+  opacity: 0;
+  pointer-events: none; /*se quita la interactividad*/
+  transition: all 1s;
+}
+.modal-content {
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.modal-close svg {
+  width: 3rem;
+  height: 3rem;
+  fill: var(--first-color);
+}
+.modal[id|="trabajo"]:target {
+  /*el | indica que cualquier vamos que inicie con la palabra seleccionada"trabajo" se active*/
+  opacity: 1;
+  pointer-events: auto;
+}
+/** fin modal**/
+
 /****progressBar****/
 progress {
   width: 100%;
@@ -309,6 +346,41 @@ progress::-moz-progress-bar {
   text-decoration: none;
 }
 
+.portfolio-card {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  display: block;
+}
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*para evirar la deformacion de la imagen*/
+}
+.portfolio-card-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  background-color: var(--first-alpha-color);
+  color: var(--white-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+.portfolio-card:hover .portfolio-card-info {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.portfolio-card-info > div {
+  padding: 1rem;
+  border: thin solid var(--white-color);
+  width: 100%;
+  height: 100%;
+}
 .service-card {
   margin: 1rem;
   padding: 1rem;
@@ -327,6 +399,14 @@ progress::-moz-progress-bar {
 /* trabajaremos en media query */
 /* para trabajar el menu en tablet */
 @media screen and (min-width: 768px) {
+  .portfolio > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .portfolio .section-title {
+    grid-column: span 2;
+  }
   .services > .container {
     display: grid;
     grid-template-columns: repeat(2, 45%);
@@ -352,7 +432,13 @@ progress::-moz-progress-bar {
     padding: 0.5rem;
     height: calc(var(--header-heigth)- 0.5rem);
   }
+  .portfolio > .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
+  .portfolio .section-title {
+    grid-column: span 3;
+  }
   .services > .container {
     grid-template-columns: repeat(3, 30%);
   }
