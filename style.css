@@ -181,7 +181,33 @@ p {
 }
 
 /*fin menu*/
-/*fin componente*/
+
+/****progressBar****/
+progress {
+  width: 100%;
+  height: 1rem;
+  background-color: var(--gray-color);
+}
+/*se ralizar pseudo clases para los navegadores web como el webkit(chrome,safari,etc y el moz(mozilla)*/
+progress::-webkit-progress-bar {
+  background-color: var(--gray-color);
+}
+progress::-webkit-progress-value {
+  background-color: var(--gray-dark-color);
+}
+progress::-moz-progress-bar {
+  background-color: var(--gray-dark-color);
+}
+.progress > p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+/***fin progressBar***/
+
+/******fin componente********/
 
 /* **** Utilities *** */
 .btn {
@@ -205,11 +231,46 @@ p {
   max-width: var(--max-width);
 }
 
+.gray-scale {
+  filter: grayscale(1);
+}
 .none {
   display: none;
 }
+.section {
+  padding: 2rem 1rem;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+@media screen and (min-width: 1024px) {
+  .full-lg-screen {
+    width: 100%;
+    min-height: 100vh;
+  }
+  .text-lg-center {
+    text-align: center;
+  }
+  .text-lg-left {
+    text-align: left;
+  }
+  .text-lg-right {
+    text-align: right;
+  }
+}
 
 /* **** Site Styles*** */
+
+.about > article {
+  margin-bottom: 2rem;
+}
 /* version mobile */
 .header {
   position: fixed;
@@ -239,6 +300,12 @@ p {
 }
 /* //para cabezara en version desktop */
 @media screen and (min-width: 1024px) {
+  .about {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+    align-content: center;
+  }
   .header {
     position: sticky; /* se comporta como elemento fijo, para que no tape el siguiente contenido anterior html */
     top: 0;
