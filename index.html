@@ -180,7 +180,7 @@
 
   </a>    
   <a href="#trabajo-2" class="portfolio-card" >
-<img src="assets/portfolio-1.jpg" alt="trabajo 1">
+<img src="assets/portfolio-2.jpg" alt="trabajo 1">
 <aside class="portfolio-card-info">
   <div class="">
     <h3>Proyecto 2</h3>
@@ -191,7 +191,7 @@
 
   </a>    
   <a href="#trabajo-3" class="portfolio-card" >
-<img src="assets/portfolio-1.jpg" alt="trabajo 1">
+<img src="assets/portfolio-3.jpg" alt="trabajo 1">
 <aside class="portfolio-card-info">
   <div class="">
     <h3>Proyecto 3</h3>
@@ -202,7 +202,7 @@
 
   </a>    
   <a href="#trabajo-4" class="portfolio-card" >
-<img src="assets/portfolio-1.jpg" alt="trabajo 1">
+<img src="assets/portfolio-4.jpg" alt="trabajo 1">
 <aside class="portfolio-card-info">
   <div class="">
     <h3>Proyecto 4</h3>
@@ -213,7 +213,7 @@
 
   </a>    
   <a href="#trabajo-5" class="portfolio-card" >
-<img src="assets/portfolio-1.jpg" alt="trabajo 1">
+<img src="assets/portfolio-5.jpg" alt="trabajo 1">
 <aside class="portfolio-card-info">
   <div class="">
     <h3>Proyecto 5</h3>
@@ -224,7 +224,7 @@
 
   </a>    
   <a href="#trabajo-6" class="portfolio-card" >
-<img src="assets/portfolio-1.jpg" alt="trabajo 1">
+<img src="assets/portfolio-6.jpg" alt="trabajo 1">
 <aside class="portfolio-card-info">
   <div class="">
     <h3>Proyecto 6</h3>
@@ -453,7 +453,73 @@
 
 
     <section id="testimonio" class="testimonials">
-      <h2>Testimonios</h2>
+     <article
+        class="hero-image"
+        style="
+          --hero-image: url('assets/hero-image-customers.jpg');
+          --hero-attachment: scroll;
+        "
+      >
+        <aside
+          class="hero-image-opacity"
+          style="--hero-opacity-color: var(--white-alpha-color)"
+        >
+          <div class="hero-image-content">
+            <div class="container">
+              <h2 class="section-title">Mis Clientes Dicen</h2>
+              <article class="carousel" style="--carousel-bg-color:var( --white-alpha-color)"> 
+                <input type="radio" name="slides" id="slide-1" checked><!--  checked se coloca para poder pasar de una imagen a otra, solo se pone al primero*** por otro lado los inputs deben ir siempre arriba de las listas del slide, sino checked no funcionaría-->
+                <input type="radio" name="slides" id="slide-2" >
+                <input type="radio" name="slides" id="slide-3" >
+                <input type="radio" name="slides" id="slide-4" >
+               
+
+                <ul class="slides"> <!-- aqui estaran contenidos las slides -->
+                  <li class="slide">
+                    <img class="avatar" src="assets/customer-1.jpg" alt="Cliente 1">
+                    <blockquote>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo et nihil consequuntur delectus quisquam, architecto quibusdam fugit doloribus, ullam fugiat labore libero veritatis mollitia accusamus voluptatibus cum saepe blanditiis iste?</blockquote>
+                    <h3 class="text-first-color">Nombre del cliente</h3>
+                    <h6>Puesto del cliente</h6>
+                  </li>
+            
+                  <li class="slide">
+                    <img class="avatar" src="assets/customer-2.jpg" alt="Cliente 2">
+                    <blockquote>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo et nihil consequuntur delectus quisquam, architecto quibusdam fugit doloribus, ullam fugiat labore libero veritatis mollitia accusamus voluptatibus cum saepe blanditiis iste?</blockquote>
+                    <h3 class="text-first-color">Nombre del cliente</h3>
+                    <h6>Puesto del cliente</h6>
+                  </li>
+         
+                  <li class="slide">
+                    <img class="avatar" src="assets/customer-1.jpg" alt="Cliente 1">
+                    <blockquote>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo et nihil consequuntur delectus quisquam, architecto quibusdam fugit doloribus, ullam fugiat labore libero veritatis mollitia accusamus voluptatibus cum saepe blanditiis iste?</blockquote>
+                    <h3 class="text-first-color">Nombre del cliente</h3>
+                    <h6>Puesto del cliente</h6>
+                  </li>
+               
+                  <li class="slide">
+                    <img class="avatar" src="assets/customer-2.jpg" alt="Cliente 2">
+                    <blockquote>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo et nihil consequuntur delectus quisquam, architecto quibusdam fugit doloribus, ullam fugiat labore libero veritatis mollitia accusamus voluptatibus cum saepe blanditiis iste?</blockquote>
+                    <h3 class="text-first-color">Nombre del cliente</h3>
+                    <h6>Puesto del cliente</h6>
+                  </li>
+                  
+                </ul>
+                <aside class="slides-nav"> <!-- para la navegacion del slide, estos seran los controles del carrusel -->
+                  <label for="slide-1" id="dot-1"></label> <!-- el for vincula los checkbox con cada id del slide -->
+                  <label for="slide-2" id="dot-2"></label>
+                  <label for="slide-3" id="dot-3"></label>
+                  <label for="slide-4" id="dot-4"></label>
+
+                </aside>
+
+              </article>
+            </div>
+
+
+          </div>
+                    
+        </aside>
+      </article>
     </section>
 
     <section id="contactos" class="contacs">
