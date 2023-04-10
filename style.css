@@ -498,6 +498,14 @@ progress::-moz-progress-bar {
   margin-top: -1rem;
 }
 
+/**footer*/
+.footer {
+  margin-bottom: var(--header-heigth);
+  background-color: var(--third-color);
+  color: var(--white-color);
+  text-align: center;
+  padding: 0.5rem;
+}
 /* version mobile */
 .header {
   position: fixed;
@@ -646,6 +654,9 @@ progress::-moz-progress-bar {
   }
   .contact-cards {
     grid-template-columns: repeat(4, 24%);
+  }
+  .footer {
+    margin-bottom: 0;
   }
   .header {
     position: sticky; /* se comporta como elemento fijo, para que no tape el siguiente contenido anterior html */
